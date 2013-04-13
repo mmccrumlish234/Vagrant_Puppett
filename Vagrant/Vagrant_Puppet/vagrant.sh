@@ -10,8 +10,8 @@ dpkg -i puppetlabs*.deb
 
 apt-get update && apt-get install -y puppet-common
 
-cp -Rv /puppet_testing/puppet_src/* /etc/puppet/
-cp -Rv /puppet_testing/hieradata/vagrant /etc/puppet/hieradata
+cp -Rv /Vagrant_Puppett/puppet_src/* /etc/puppet/
+#cp -Rv /Vagrant_Puppett/hieradata/vagrant /etc/puppet/hieradata
 
 puppet apply /etc/puppet/manifests/site.pp
 
