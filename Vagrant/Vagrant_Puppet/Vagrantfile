@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant::Config.run do |config|
+  
+  config.vm.box = "precise64"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.host_name = ENV['VAGRANT_HOSTNAME'] || 'vm.puppet'
+  config.vm.customize ["modifyvm", :id, "--memory", 1024]
+  config.vm.customize ["modifyvm", :id, "--cpus", 2]
+  config.vm.share_folder "puppet", "/puppet_testing", "../.."
+  config.vm.provision :shell, :path => "vagrant.sh"
+  
+end
